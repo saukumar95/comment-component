@@ -46,7 +46,7 @@ class Comment extends Component {
                                 </li>
                             </ul>)
                         })}
-                        <CommentBox img_src={'https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg'} type={'text'} className={''} placeholder={'Enter you comment here.'} />
+                        <CommentBox img_src={'https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg'} type={'text'} className={''} placeholder={'Add a comment'} />
                         {/* <Pagination commentsize={this.state.comments.length} /> */}
                     </div>
                 </div>
