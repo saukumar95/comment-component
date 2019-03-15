@@ -30,3 +30,22 @@ a:hover {
 div .comment p {
   word-wrap: break-word;
 }
+
+/* Comment Box Component */
+
+
+
+.b-default {
+  border: none;
+  background-color: transparent;
+  font-size: 0.7rem;
+  font-family: inherit;
+}
+
+div .media-object input {
+  border: none;
+}
+
+div .media-object input:focus {
+  border-style: none;
+}

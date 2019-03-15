@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../src/App.css';
-import Pagination from './navpagination';
+// import Pagination from './navpagination';
+import CommentBox from './commentbox';
 
 class Comment extends Component {
 
@@ -38,14 +39,15 @@ class Comment extends Component {
                                     </a>
                                     <div className="media-body comment">
                                         <a href="#b" >{comment.comment_username}</a>
-                                        <p className="pl-3">
+                                        <p className="pl-3 text-justify">
                                             {comment.comment_body}
                                         </p>
                                     </div>
                                 </li>
                             </ul>)
                         })}
-                        <Pagination commentsize={this.state.comments.length} />
+                        <CommentBox img_src={'https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg'} type={'text'} className={''} placeholder={'Enter you comment here.'} />
+                        {/* <Pagination commentsize={this.state.comments.length} /> */}
                     </div>
                 </div>
             </div >)
