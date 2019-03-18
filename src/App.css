@@ -42,6 +42,13 @@ div .comment p {
   font-family: inherit;
   color: blue;
 }
+.b-default:focus {
+  outline: none;
+}
+
+.b-default:hover {
+  color: rgb(78, 78, 235)
+}
 
 div .media-object input {
   border: none;
@@ -51,4 +58,42 @@ div .media-object input {
 
 div .media-object input:focus {
   outline: none;
+}
+
+.red-heart-checkbox {
+  visibility: hidden;
+  
+}
+.red-heart-checkbox + label {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-size: 30px;
+      padding-left: 15px;
+      transition: all 0.2s;
+    }
+
+.red-heart-checkbox:checked + label:before {    
+      content: '\f004';
+      color: #F00;
+}
+.red-heart-checkbox + label:before {
+  width: 31.5px;
+  height: 30px;
+  content: "";
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 3px;
+  font-family: FontAwesome;
+  font-size: 30px;
+  content: "\f08a";
+  transition: all 0.3s;
+  color: #888 ;
+}
+
+html, body { 
+  height: 100%; 
 }

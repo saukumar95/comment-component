@@ -12,20 +12,40 @@ class Comment extends Component {
                 img_src: ["https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg"],
                 comment_username: ["saurabh_kumarrrr"],
                 comment_body: ["Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra ."],
+                checked: true
             },
             {
                 img_src: ["https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg"],
                 comment_username: ["spy895"],
                 comment_body: ["Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra ."],
+                checked: true
             },
             {
                 img_src: ["https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg"],
                 comment_username: ["hiddenkiller95"],
                 comment_body: ["Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra ."],
+                checked: false
             }
-            ]
+            ],
         }
     }
+
+    addComment = (comment_input) => {
+        let comments = {
+            img_src: "https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg",
+            comment_username: "vish123",
+            comment_body: comment_input
+        }
+        this.state.comments.push(comments);
+        this.setState({
+            comments: this.state.comments
+        })
+    }
+
+    handleCheck = () => {
+        this.setState({ checked: !this.state.checked });
+    }
+
     render() {
         return (
             <div className="container-fluid">
@@ -42,11 +62,17 @@ class Comment extends Component {
                                         <p className="pl-3 text-justify">
                                             {comment.comment_body}
                                         </p>
+
+                                        <div className='control-group ml-auto'>
+                                            <input onChange={this.handleCheck} className='red-heart-checkbox' id='red-check1' type='checkbox' defaultChecked={comment.checked} />
+                                            <label htmlFor='red-check1'></label>
+                                        </div>
+
                                     </div>
                                 </li>
                             </ul>)
                         })}
-                        <CommentBox img_src={'https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg'} type={'text'} className={''} placeholder={'Add a comment'} />
+                        <CommentBox addComment={this.addComment} img_src={'https://cdn.ebaumsworld.com/mediaFiles/picture/1035099/85708057.jpg'} type={'text'} name={'comment_input'} className={''} placeholder={'Add a comment'} />
                         {/* <Pagination commentsize={this.state.comments.length} /> */}
                     </div>
                 </div>
